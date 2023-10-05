@@ -1,5 +1,6 @@
 **Lab Report 1**
 ---
+![Screenshot 2023-10-03 at 5 27 14 PM](https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/9a112c62-e16a-4c77-8594-f6bad406cbad)
 1. Share an example of using the command with no arguments.
   * `cd`: Running this command doesn't do anything because there is no argument. If there was a directory, runnning the command `cd` alone would bring you to 
         like a home screen on a phone. If there was an argument, the `cd` command changes the directory you are in. The output isn't an error because we weren't
@@ -11,3 +12,4 @@
   * `cd lecture1`: When running this command, I noticed that the promt changed. Now it includes the working directory the terminal is in. The purpose of the `cd` command is the change the directory. Running the command with "lecture1" as the argument set the main working directory to "lecture1". This would not be an error because the command succesfully executed. We can see this by the change in the prompt and by running `pwd` which stands for "print working directory".
   *  `ls messages`:
 3.  
+
