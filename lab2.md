@@ -1,5 +1,8 @@
 **Lab Report 2**
 ---
+Part 1  
+![Image](StringServerCode.png)  
+![Image](:addhhello.png)
 Part 2  
 Path to the Public Key:  
 ![Image](privatekeypah.png)  
