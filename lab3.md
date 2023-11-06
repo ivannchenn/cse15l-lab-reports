@@ -1,15 +1,15 @@
 **Lab 3**
 ---
-Part 1  
-* A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)  
-```
-    @Test
+Part 1 - Bugs  
+* A failure-inducing input for the buggy program, as a JUnit test and any associated code (write it as a code block in Markdown)
+  ```
+  @Test
   public void testReverseInPlace2() {
     int[] input1 = {1,2,3};
     ArrayExamples.reverseInPlace(input1);
     assertArrayEquals(new int[]{3,2,1}, input1);
   }
-```
+  ```  
 * An input that doesn’t induce a failure, as a JUnit test and any associated code (write it as a code block in Markdown)
   ```
     @Test 
@@ -19,6 +19,73 @@ Part 1
     assertArrayEquals(new int[]{ 3 }, input1);
 	}
   ```  
-* The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)  
-  Failure-inducing input with an input that doesn't induce a failure
+* The symptom, as the output of running the tests (provide it as a screenshot of running JUnit with at least the two inputs above)
+  
+  Failure-inducing input with an input that doesn't induce a failure  
+  ![Image](failureInducingInput.png)
 
+  Input that doesn't induce a failure  
+  ![Image](noFailure.png)
+
+* The bug, as the before-and-after code change required to fix it (as two code blocks in Markdown)  
+  Before:
+  ```
+    static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+  ```
+  After:
+  ```
+    static void reverseInPlace(int[] arr) {
+    int temp = arr[0];
+    for(int i = 0; i < (arr.length/2); i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+    arr[arr.length - 1] = temp;
+  }
+  ```
+  The fix in the "After" code introduces a temporary `temp` variable which stores the value of the first element. Then it will iterate up to half of the array because of `arr.length/2` and swap the elements. It will then assign the first origanl element held in `temp` to the last element in the array.
+
+Part 2 - Researching Commands  
+` find -newer `: 
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -newer technical/911report/chapter-2.txt
+ivanchen@Ivans-MacBook-Air-3 docsearch %
+```
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -newer technical/911report/chapter-1.txt
+technical/911report/chapter-2.txt
+```
+The `-newer` option will list all the files that have a newer modification time than the file provided at the end of the command. So in the code block above, I added a few words to `chapter-1.txt` first and did the same to `chapter-2.txt` after. As you can see from the first command, it tried to find files with a newer modification time than `chapter-2.txt`, but since it was the most recently updated file, nothing was returned. However, in the second command, it returned the file path that had a newer modification time than `chapter-1.txt`, `chapter-2.txt`. This is useful because it can help you find which files that have been modified recently.    
+https://www.computerhope.com/unix/ufind.htm  
+
+`find -link n`:  
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical/911report -links 1
+./technical/911report/chapter-13.4.txt
+./technical/911report/chapter-13.5.txt
+./technical/911report/chapter-13.1.txt
+./technical/911report/chapter-13.2.txt
+./technical/911report/chapter-13.3.txt
+./technical/911report/chapter-3.txt
+./technical/911report/chapter-2.txt
+./technical/911report/chapter-1.txt
+./technical/911report/chapter-5.txt
+./technical/911report/chapter-6.txt
+./technical/911report/chapter-7.txt
+./technical/911report/chapter-9.txt
+./technical/911report/chapter-8.txt
+./technical/911report/preface.txt
+./technical/911report/chapter-12.txt
+./technical/911report/chapter-10.txt
+./technical/911report/chapter-11.txt
+ivanchen@Ivans-MacBook-Air-3 docsearch %
+```
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical/911report -links 2
+ivanchen@Ivans-MacBook-Air-3 docsearch % 
+```
+The `-link n` option does exactly what it sounds like. It finds the files that has `n` links. In the first code block, the command finds the files in the path `./technical/911report` that have exactly 1 link. In the second, it does the same but finds the files that have exactly 2 links. It is useful because it can help find files that have `n` amount of links.  
+https://www.computerhope.com/unix/ufind.htm  
