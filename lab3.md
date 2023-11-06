@@ -49,7 +49,7 @@ Part 1 - Bugs
   The fix in the "After" code introduces a temporary `temp` variable which stores the value of the first element. Then it will iterate up to half of the array because of `arr.length/2` and swap the elements. It will then assign the first origanl element held in `temp` to the last element in the array.
 
 Part 2 - Researching Commands  
-` find -newer file`: 
+`find -newer file`: 
 ```
 ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -newer technical/911report/chapter-2.txt
 ivanchen@Ivans-MacBook-Air-3 docsearch %
