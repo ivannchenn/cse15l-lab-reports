@@ -49,7 +49,7 @@ Part 1 - Bugs
   The fix in the "After" code introduces a temporary `temp` variable which stores the value of the first element. Then it will iterate up to half of the array because of `arr.length/2` and swap the elements. It will then assign the first origanl element held in `temp` to the last element in the array.
 
 Part 2 - Researching Commands  
-` find -newer `: 
+` find -newer file`: 
 ```
 ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -newer technical/911report/chapter-2.txt
 ivanchen@Ivans-MacBook-Air-3 docsearch %
@@ -89,3 +89,31 @@ ivanchen@Ivans-MacBook-Air-3 docsearch %
 ```
 The `-link n` option does exactly what it sounds like. It finds the files that has `n` links. In the first code block, the command finds the files in the path `./technical/911report` that have exactly 1 link. In the second, it does the same but finds the files that have exactly 2 links. It is useful because it can help find files that have `n` amount of links.  
 https://www.computerhope.com/unix/ufind.htm  
+
+`find -empty`:  
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -empty
+./technical/emptyFile.txt
+./technical/911report/emptyFile2.txt
+```
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical/911report -empty
+./technical/911report/emptyFile2.txt
+```
+This command-option looks for all the empty files in the given path. In the first command, it finds all empty files in `./technical`. The second find commands specificaly in `./technical/911report`. This is useful because it can show all the useless empty files in your directory that you can get rid of.  
+https://www.computerhope.com/unix/ufind.htm  
+
+`find -amin n`:  
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical -amin -20
+./technical
+./technical/emptyFile.txt
+./technical/911report
+./technical/911report/emptyFile2.txt
+```
+```
+ivanchen@Ivans-MacBook-Air-3 docsearch % find ./technical/911report -amin -20
+./technical/911report
+./technical/911report/emptyFile2.txt
+```
+This command-option searches for files that were accessed `n` minutes ago. For example, the first command searched `./technical` for files that were modified in the last 20 minutes. The second command is similar, but it searches directly in `./technical/911report`. This command would be usefull because it would show all the files you have modified in the last `n` minutes.
