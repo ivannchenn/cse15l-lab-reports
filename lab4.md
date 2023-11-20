@@ -23,12 +23,12 @@ Step 7: Edit the code file to fix the failing test
 The the command to get into vim was 14 commands up in the history, so I had to press the up arrow 14 times to open vim. Then instead of pressing the down arrow, searching for `/index1` was
 a quicker way. After changing the `1` to a `2`, `:wq` saves the file and exits vim
 
-Step 8: Run the tests, demonstrating that they now succeed
-<up><up><enter>  
+Step 8: Run the tests, demonstrating that they now succeed  
+`<up><up><enter>`  
 <img width="404" alt="Screenshot 2023-11-19 at 6 04 45 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/7633e4e2-1ed9-4086-b33d-986a57f7049c">  
 The command `bash test.sh` was only 2 commands up, so I only had to press the up arrow twice and enter
 
-Step 9: Commit and push the resulting change to your Github account (you can pick any commit message!)
+Step 9: Commit and push the resulting change to your Github account (you can pick any commit message!)  
 ```
 git add ListExamples.java  <enter>
 git commit -m "commit"  <enter>
