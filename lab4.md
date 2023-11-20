@@ -17,7 +17,7 @@ Step 6: Run the tests, demonstrating that they fail
 I first had to change the directory into `lab7`. Then the `bash test.sh` command was 7 commands up frm the history.
 
 Step 7: Edit the code file to fix the failing test  
-`<up><up><up><up><up><up><up><up><up><up><up><up><up><up><enter>` open vim
+`<up><up><up><up><up><up><up><up><up><up><up><up><up><up><enter>` open vim  
 `/index1 <enter><N><e><x><i><2> <esc> <:><w><q>`  
 <img width="711" alt="Screenshot 2023-11-19 at 6 03 42 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/99052bae-87d8-4b78-87a9-691be0507135">  
 The the command to get into vim was 14 commands up in the history, so I had to press the up arrow 14 times to open vim. Then instead of pressing the down arrow, searching for `/index1` was
