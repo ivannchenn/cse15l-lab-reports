@@ -21,7 +21,7 @@ Step 7: Edit the code file to fix the failing test
 `/index1 <enter><N><e><x><i><2> <esc> <:><w><q>`  
 <img width="711" alt="Screenshot 2023-11-19 at 6 03 42 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/99052bae-87d8-4b78-87a9-691be0507135">  
 The the command to get into vim was 14 commands up in the history, so I had to press the up arrow 14 times to open vim. Then instead of pressing the down arrow, searching for `/index1` was
-a quicker way. After changing the `1` to a `2`, `:wq` saves the file and exits vim
+a quicker way. After changing the `1` to a `2` by pressing `i`, `delete`, `2`, and then `esc` to exit out of INSERT mode, `:wq` saves the file and exits vim
   
 Step 8: Run the tests, demonstrating that they now succeed  
 `<up><up><enter>`  
