@@ -34,5 +34,7 @@ git add ListExamples.java  <enter>
 git commit -m "commit"  <enter>
 git push origin main  <enter>
 ```
+<img width="602" alt="Screenshot 2023-12-03 at 4 04 27 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/5b71b436-46c5-41bb-a9b5-e1e5550ba034">
+
 These commands didn't show up in my history so I had to type them out. Took 70 key presses all together.
 
