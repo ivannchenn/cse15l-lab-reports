@@ -2,14 +2,13 @@
 ---  
 **Part 1**  
 Step 1: Student Post   
-I am running into an error when I attempt to run the lab 7 program. In the screenshot below, I noticed that the program timed out. I think this means that 
-there is a bug in a loop that causes it to never end. Without the `(timeout = 500)`, the code would never finish executing. The error says the problem is somewhere in line 28, so I think it has to do with the if statement in the merge method. 
+I am running into an error when I attempt to run the lab 7 program. In the screenshot below, I noticed that the program timed out. I think this means that there is a bug in a loop that causes it to never end. Without the `(timeout = 500)`, the code would never finish executing. The error says the problem is somewhere in line 28, so I think it has to do with the if statement in the merge method. 
 Below is a snippit of the my code and the error I am receiving.  
 <img width="784" alt="Screenshot 2023-12-03 at 5 26 39 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/abdb8db3-6bb2-476f-9263-1e82e969b0f2">
 <img width="904" alt="Screenshot 2023-12-03 at 5 30 14 PM" src="https://github.com/ivannchenn/cse15l-lab-reports/assets/146862312/63a926f8-97c6-41e9-953c-428380244f74">  
   
 Step 2: TA Response  
-It seems you are on the right track. We know that the `merge` method is meant to "merge" the two sorted list. As we can see, the first `while` loop, it properly add's elements from `list1` to `result` when `list1.get(index1).compareTo(list2.get(index2)) < 0` is true. 
+It seems you are on the right track. We know that the `merge` method is meant to "merge" the two sorted list. As we can see, in the first `while` loop, there is an `if` statement, it properly add's elements from `list1` to `result` when `list1.get(index1).compareTo(list2.get(index2)) < 0` is true. 
 What happens when that statement is false? Do elements from `list2` get added to `results`? 
 Take a look at the `while loops` conditional statement as well. `index1 < list1.size() && index2 < list2.size()` means that the `while` loop will continue until `index1` is greater than `list1.size()` AND `index2` is greater than `list2.size()`.
 We can see that `index1` changes when we add elements from `list1` to `results`, what about `index2`?  
